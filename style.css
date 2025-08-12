@@ -134,3 +134,23 @@ canvas {
   border-radius: 8px; /* Give them rounded corners */
   background-color: #333; /* A placeholder background if images are slow to load */
 }
+.modal-button-container {
+  margin: 25px 0; /* Add space around the button */
+}
+
+.modal-button {
+  display: inline-block; /* Allows padding and keeps it centered */
+  background-color: #f0ad4e; /* A standout color like orange/gold */
+  color: #111;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 16px;
+  text-decoration: none; /* Remove underline from the link */
+  transition: background-color 0.2s ease;
+}
+
+.modal-button:hover {
+  background-color: #eea236; /* Darker shade on hover */
+}
+/* --- END: New Modal Button Styles --- */
