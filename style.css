@@ -1,0 +1,136 @@
+/* Prevents mobile browsers from zooming on double-tap */
+html { touch-action: manipulation; }
+
+body { 
+  margin: 0; 
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial; 
+  background:#111; 
+  color:#eee; 
+}
+
+/* Make the wrapper use full width on mobile, but have a max-width on desktop */
+.wrap { 
+  width: 95%;
+  max-width: 520px; 
+  margin: 20px auto; 
+  padding: 12px; 
+  box-sizing: border-box; /* Important for responsive layouts */
+}
+
+.topbar {
+  display: flex;
+  align-items: center; /* Vertically center the button and the text block */
+  gap: 12px;
+  margin-bottom: 10px;
+  /* This is the key: a fixed height that's tall enough for two lines */
+  height: 50px; 
+}
+
+.pred {
+  margin-left: auto; /* Pushes it to the right */
+  display: flex;
+  flex-direction: column; /* Stack the label and confidence on top of each other */
+  justify-content: center; /* Center them vertically within the .pred container */
+  align-items: flex-end; /* Align the text to the right */
+  gap: 4px; /* A small space between the label and confidence lines */
+  font-variant-numeric: tabular-nums;
+  text-align: right;
+}
+
+.pred span {
+  /* Let text wrap naturally if it's too long */
+  white-space: normal;
+  /* Adjust line height for a tighter look */
+  line-height: 1.2;
+}
+
+
+
+button { 
+  background:#2b7; 
+  border:none; 
+  color:#111; 
+  padding:8px 12px; 
+  border-radius:6px; 
+  font-weight:600; 
+  cursor:pointer; 
+}
+
+button:hover { background:#39c; color:#fff; }
+
+
+/* Let the canvas holder be flexible */
+#canvas-holder { 
+  background:#222; 
+  padding:10px; 
+  border-radius:10px; 
+  display:flex; 
+  justify-content:center; 
+}
+
+canvas { 
+  border-radius:8px; 
+  box-shadow: 0 4px 16px rgba(0,0,0,0.4); 
+  /* This ensures the canvas never overflows its container */
+  max-width: 100%;
+  height: auto;
+  touch-action: none;
+}
+.conf-container {
+  width: 100px;
+  height: 20px;
+  background-color: #444;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+#conf-bar {
+  width: 0%;
+  height: 100%;
+  background-color: #2b7;
+  transition: width 0.3s ease-in-out;
+}
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.6);
+}
+
+.modal-content {
+  background-color: #222;
+  margin: 15% auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+  max-width: 500px;
+  border-radius: 10px;
+  color: #eee;
+}
+
+.close-btn {
+  color: #aaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.modal-images {
+  display: flex; /* Arrange images horizontally */
+  gap: 15px; /* Space between images */
+  justify-content: center; /* Center them */
+  margin: 20px 0; /* Add some vertical space */
+}
+
+.modal-images img {
+  max-width: 45%; /* Make them responsive within the modal */
+  height: auto;
+  border-radius: 8px; /* Give them rounded corners */
+  background-color: #333; /* A placeholder background if images are slow to load */
+}

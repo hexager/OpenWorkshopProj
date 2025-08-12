@@ -1,0 +1,45 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Doodle Guess</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="style.css" />
+    <!-- p5.js -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.9.0/p5.min.js"></script>
+    <!-- ml5.js -->
+    <script src="https://unpkg.com/ml5@latest/dist/ml5.min.js"></script>
+  </head>
+  <body>
+    <div class="wrap">
+      <div class="topbar">
+        <button id="clearBtn">Clear</button>
+        <button id="aboutBtn">About</button>
+    <div class="pred">
+    <span id="label">Label: —</span>
+    <div class="conf-container">
+        <div id="conf-bar"></div>
+    </div>
+    <span id="conf">Confidence: —</span>
+    </div>
+
+      </div>
+      <div id="canvas-holder"></div>
+    </div>
+    <script src="sketch.js"></script>
+    <div id="aboutModal" class="modal">
+    <div class="modal-content">
+        <span class="close-btn">&times;</span>
+        <div class="modal-images">
+            <img src="image1.png" alt="Our Logo">
+        </div>
+        <h2>About MRM Research AI Subsystem</h2>
+        <p>We are a group of passionate students exploring the cutting edge of AI and Machine Learning. We work on research papers</p>
+        <p>Join or someone else will.</p>
+        <div class="modal-images">
+            <img src="qrcode.jpg" alt="It's a qr man">
+        </div>
+    </div>
+    </div>
+  </body>
+</html>
